@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CAS Tracker - Iniciar sesión</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/ui-toasts.css">
+</head>
+<body class="page-auth">
+  <main class="auth-container">
+    <div class="card auth-card">
+      <h2>CAS Tracker</h2>
+      <p class="muted">Organiza tu CAS — Inicia sesión o regístrate</p>
+
+      <form id="loginForm" class="form">
+        <label>Email</label>
+        <input type="email" id="loginEmail" required />
+        <label>Contraseña</label>
+        <input type="password" id="loginPassword" required />
+        <button type="submit" class="btn">Iniciar sesión</button>
+      </form>
+
+      <hr>
+
+      <form id="registerForm" class="form">
+        <label>Correo</label>
+        <input type="email" id="registerEmail" required />
+        <label>Contraseña</label>
+        <input type="password" id="registerPassword" required />
+        <button type="submit" class="btn outline">Registrarse</button>
+      </form>
+
+      <p id="msg" class="muted small"></p>
+    </div>
+  </main>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
