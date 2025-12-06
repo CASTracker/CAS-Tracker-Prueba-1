@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --text: #0f1724;
+  --muted: #62707a;
+  --primary: #0077b6;
+  --primary-2: #0096c7;
+  --accent: #90e0ef;
+  --danger: #ff4c4c;
+  --radius: 12px;
+  --shadow: 0 8px 20px rgba(15,23,42,0.06);
+  --glass: rgba(255,255,255,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  font-family: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0; background:linear-gradient(180deg,var(--bg),#eef6fb 120%); color:var(--text);
+  -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+}
+
+/* header */
+.site-header{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:1rem; padding:1rem; position:sticky; top:0; z-index:40;
+  background:linear-gradient(90deg,var(--primary),var(--primary-2));
+  color: #fff; box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+.site-header h1{margin:0; font-size:1.05rem}
+.nav-inline a{ margin:0 10px; color:rgba(255,255,255,0.95); text-decoration:none; font-weight:600}
+.nav-inline a:hover{ text-decoration:underline }
+
+/* layout */
+.container{ max-width:980px; margin:1.5rem auto; padding:1rem; }
+.card{ background:var(--card); border-radius:var(--radius); padding:1rem; box-shadow:var(--shadow); }
+.form-card{ padding:1.1rem; }
+
+/* small cards grid */
+.cards-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:1rem; margin-top:0.8rem }
+.card-mini{ padding:1rem; border-radius:10px; background:linear-gradient(180deg,#fff,#fbfdff) }
+.card-mini h3{ margin:0; color:var(--primary); font-size:0.95rem }
+.card-mini p{ margin:0.45rem 0 0; font-weight:700; font-size:1rem }
+.card-mini.highlight{ background:linear-gradient(180deg, rgba(0,119,182,0.06), rgba(144,224,239,0.02)); border:1px solid rgba(7,105,155,0.06) }
+
+/* forms */
+.form{ display:flex; flex-direction:column; gap:0.8rem }
+.row{ display:flex; gap:0.8rem; align-items:center }
+.row.space-between{ justify-content:space-between }
+input,select,textarea{
+  width:100%; padding:0.8rem; border-radius:8px; border:1px solid #e6eef5; font-size:0.95rem;
+  background:linear-gradient(180deg,#fff,#fbfdff);
+}
+input[type="number"]{ max-width:160px }
+input:focus,select:focus,textarea:focus{ outline:none; border-color:var(--primary); box-shadow:0 6px 18px rgba(0,119,182,0.06) }
+
+/* buttons */
+button{ padding:0.6rem 0.9rem; border-radius:10px; cursor:pointer; font-weight:600; border:none; display:inline-flex; align-items:center; gap:0.5rem }
+.btn{ background:var(--primary); color:white; box-shadow:0 8px 20px rgba(0,119,182,0.12) }
+.btn.ghost{ background:transparent; color:white; border:1px solid rgba(255,255,255,0.12) }
+.btn.outline{ background:transparent; color:var(--primary); border:1px solid rgba(0,119,182,0.12) }
+.btn.small{ padding:6px 8px; font-size:0.9rem }
+
+/* tables */
+.table{ width:100%; border-collapse:collapse; margin-top:0.6rem }
+.table th, .table td{ text-align:left; padding:0.8rem; border-bottom:1px solid #eef4f8 }
+.table thead th{ color:var(--muted); font-weight:700 }
+
+/* reflexions list */
+.lista-reflexiones{ display:flex; flex-direction:column; gap:0.9rem; margin-top:0.6rem }
+.reflexion{ padding:0.9rem; border-radius:10px; box-shadow:0 6px 18px rgba(15,23,42,0.04); transition:transform .12s }
+.reflexion:hover{ transform:translateY(-6px) }
+
+/* progress */
+.progress{ height:12px; background:#eef6fb; border-radius:8px; overflow:hidden; margin:0.6rem 0 }
+.progress-fill{ height:100%; background:linear-gradient(90deg,var(--primary),var(--primary-2)); }
+
+/* footer */
+.site-footer{ text-align:center; padding:1rem 0; color:var(--muted); margin-top:1.5rem }
+
+/* word counter */
+.textarea-container{ position:relative }
+.word-counter{ position:absolute; right:12px; bottom:10px; font-size:12px; color:var(--muted); background:rgba(255,255,255,0.8); padding:4px 6px; border-radius:6px }
+
+/* responsive */
+@media (max-width:900px){
+  .cards-grid{ grid-template-columns: repeat(2,1fr) }
+}
+@media (max-width:520px){
+  .cards-grid{ grid-template-columns:1fr }
+  .row{ flex-direction:column }
+}
+
+/* minimal toast container (js will insert toasts) */
+.toasts { position: fixed; right: 16px; bottom: 16px; display:flex; flex-direction:column; gap:10px; z-index:2000 }
+.toast { padding:10px 14px; border-radius:8px; box-shadow:0 8px 18px rgba(0,0,0,0.08); color:#fff }
+.toast.success { background: #16a34a }
+.toast.error { background: #dc2626 }
+.toast.info { background: #0ea5e9; color:#06202a }
+.small { font-size:0.85rem }
+.muted { color:var(--muted) }
