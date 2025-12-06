@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>CAS Tracker - Reflexiones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+  <script src="https://cdn.jsdelivr.net/npm/docx@7.2.0/build/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.5/dist/FileSaver.min.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-left">
+      <h1>Reflexiones CAS</h1>
+      <nav class="nav-inline">
+        <a href="menu.html">Inicio</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="reflexiones.html">Reflexiones</a>
+        <a href="horario.html">Horario</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button id="logoutBtn" class="btn ghost">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card form-card">
+      <form id="formReflexion" class="form">
+        <input type="text" id="tituloReflexion" placeholder="Título de la reflexión" required>
+        <div class="textarea-container">
+          <textarea id="textoReflexion" placeholder="Escribe tu reflexión aquí..." rows="6" required></textarea>
+          <div id="wordCount" class="word-counter">0 palabras</div>
+        </div>
+        <div class="row space-between">
+          <button type="submit" class="btn">Guardar Reflexión</button>
+          <button id="exportAllWord" type="button" class="btn outline">Exportar todas a .docx</button>
+        </div>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>Mis Reflexiones</h2>
+      <div id="listaReflexiones" class="lista-reflexiones"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Creado por Alejandro Sánchez Alejo</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
