@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CAS Tracker - Panel</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="manifest" href="manifest.json">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-left">
+      <h1>📘 CAS Tracker</h1>
+      <nav class="nav-inline">
+        <a href="menu.html">Inicio</a>
+        <a href="actividades.html">Actividades</a>
+        <a href="reflexiones.html">Reflexiones</a>
+        <a href="horario.html">Horario</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <button id="btnSync" class="btn small">Sincronizar</button>
+      <button id="logoutBtn" class="btn ghost">Cerrar sesión</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="totales card">
+      <div class="totales-top">
+        <h2>Resumen de Horas CAS</h2>
+        <div>
+          <button class="btn" onclick="exportarDatos()">💾 Exportar datos</button>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card-mini">
+          <h3>Creatividad</h3>
+          <p id="totalC">0 h</p>
+        </div>
+        <div class="card-mini">
+          <h3>Actividad</h3>
+          <p id="totalA">0 h</p>
+        </div>
+        <div class="card-mini">
+          <h3>Servicio</h3>
+          <p id="totalS">0 h</p>
+        </div>
+        <div class="card-mini highlight">
+          <h3>Total</h3>
+          <p id="totalGeneral">0 h</p>
+        </div>
+      </div>
+
+      <div class="progress-row">
+        <label>Progreso total</label>
+        <div class="progress">
+          <div id="progressBar" class="progress-fill" style="width:0%"></div>
+        </div>
+        <small id="progressText" class="muted">0 / 150 horas</small>
+      </div>
+    </section>
+
+    <section class="reflexiones-preview card">
+      <h2>Últimas Reflexiones</h2>
+      <div id="previewReflexiones" class="lista-reflexiones"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Creado por Alejandro Sánchez Alejo</p>
+  </footer>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
